@@ -1,0 +1,240 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    color: #1f2937;
+
+}
+
+.header {
+    background: linear-gradient(135deg, #2563eb, #1e3a8a);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    min-width: 50px;
+    position: relative;
+
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.header p {
+    margin: 0.5rem 0 0;
+    font-size: 1.25rem;
+}
+
+.sub-header{
+    /* border-bottom: 1px solid #9999993a; */
+    padding: 5px;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+}
+
+.btns{
+    background-color: #4066BA;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    border-radius: 100%;
+
+    p{
+        cursor: pointer;
+    }
+
+    span{
+        position: absolute;
+        top: 5px;
+        left:45px;
+        background-color: rgb(255, 66, 66);
+        color: #fff;
+        border-radius: 100%;
+        padding: 5px;
+        font-size: 12px;
+        max-width: 30px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+
+
+
+.search-bar {
+    width: 80%;
+    max-width: 500px;
+    margin: 1rem auto;
+    padding: 0.75rem;
+    border: 2px solid #2563eb;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    outline: none;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    overflow: scroll;
+    scrollbar-width: none;
+    
+}
+
+.card {
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    max-width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.card h2 {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    color: #2563eb;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #4b5563;
+}
+
+.price {
+    font-size: 1.25rem;
+    color: #16a34a;
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+.contact-button {
+    display: block;
+    max-width: 100px;
+    margin: 1rem auto 0;
+    padding: 0.75rem;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+.contact-button:hover {
+    background: #1e40af;
+}
+
+.error304{
+    font-size: 25px;
+    width: 100%;
+    height: 40dvh;
+    text-align: center;
+
+}
+
+#cart-container {
+    background-color: #4f638b;
+    max-width: 1200px;
+    width: 100%;
+    border-radius: 8px;
+    padding: 2px;
+    display: none;   
+    font-size: 20px;
+    min-height: 100px;
+    padding: 10px;
+    
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+
+
+    ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border-bottom: 1px solid #2f4062;
+      
+
+        li{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            
+             box-shadow: 0px 5px 50px 5px rgba(89, 86, 86, 0.192);
+        }
+        
+    }
+
+}
+
+.img-logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    object-fit: cover;
+}
+
+.remove-from-cart{
+    padding: 5px;
+    background-color: transparent;
+    outline: none;
+    font-size: 20px;
+    color: rgb(227, 57, 57);
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+.btn-w{
+    background-color: rgb(8, 156, 8);
+    color: #fff;
+    font-size: 20px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+
+#cart-total{
+    color: #f3f4f6;
+}
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #1e3a8a;
+    color: white;
+    font-size: 0.875rem;
+}

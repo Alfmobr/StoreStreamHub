@@ -1,0 +1,107 @@
+// Array de objetos con la información de los servicios
+const services = {
+   "streaming": [ {
+        id: 1,
+        image: "/netflix.png",
+        title: "Netflix",
+        description: "Accede a miles de películas y series exclusivas.",
+        price: "C$100/mes",
+        link: "https://wa.me/50589600977"
+    },
+    {
+        id: 2,
+        image: "/spotify.png",
+        title: "Spotify",
+        description: "Disfruta de música sin límites en cualquier momento.",
+        price: "C$120/mes",
+        link: "https://wa.me/50589600977"
+    },
+    {
+        id: 3,
+        image:"/ymusic.png",
+        title: "YouTube Music",
+        description: "Escucha tus canciones favoritas y descubre nuevos artistas.",
+        price: "C$100/mes",
+        link: "https://wa.me/50589600977"
+    },
+    {
+        id: 4,
+        image: "/hbomax.jpg",
+        title: "HBO Max",
+        description: "Ve las series y películas más populares del momento.",
+        price: "C$100/mes",
+        link: "https://wa.me/50589600977"
+    },
+    {
+        id: 5,
+        image: "/amazon.png",
+        title: "Amazon Prime Video",
+        description: "Entretenimiento para toda la familia en un solo clic.",
+        price: "C$110/mes",
+        link: "https://wa.me/50589600977"
+    },
+],
+
+"Gaming":[
+    {
+        id: 6,
+        image:"/pcgta.png",
+        title: "Compras Juegos",
+        description: "Adquiere tus compras en cualquier juego de manera rápida y segura.",
+        price: "Precios variables",
+        link: "https://wa.me/50589600977"
+    },
+    {
+        id: 7,
+        image:"/FF.png",
+        title: "Free Fire",
+        description: "Adquiere tus diamantes y pass rápido y seguro.",
+        price: "Precios variables",
+        link: "https://wa.me/50589600977"
+    },
+    {
+        id: 8,
+        image: "/8ballp.png",
+        title: "8 Ball Pool",
+        description: "Adquiere tus diamantes y 8 ball pass rápido y seguro.",
+        price: "$5.99",
+        link: "https://wa.me/50589600977"
+    }
+    ,
+    {
+        id: 9,
+        image: "/cod.png",
+        title: "Call Of Duty",
+        description: "Coin Point ",
+        price: "Precios variables",
+        link: "https://wa.me/50589600977"
+    }
+    ,
+    {
+        id: 10,
+        image: "/cruch.png",
+        title: "Crunchyroll",
+        description: "Los mejores anime solo por Crunchyrol",
+        price: "C$ 90",
+        link: "https://wa.me/50589600977"
+    }
+    ,
+    {
+        id: 11,
+        image:"/target.png",
+        title: "Tarjetas de Regalo",
+        description: "Consigue una gran varidad de tarjetas.",
+        price: "Precios variables",
+        link: "https://wa.me/50589600977"
+    },
+    {
+        id: 12,
+        image:"/ClashRoyale.png",
+        title: "Clash Royal",
+        description: "Compra tus paquetes y Pass Royal",
+        price: "Precios variables",
+        link: "https://wa.me/50589600977"
+    }
+], 
+
+};

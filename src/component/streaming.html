@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios de Streaming y Juegos</title>
+    <link rel="stylesheet" href="streaming.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Servicios de Streaming y Compras Online</h1>
+        <p>Disfruta de tus plataformas y juegos favoritos en un solo lugar</p>
+        <input type="text" id="search" placeholder="Buscar servicios..." class="search-bar">
+
+    </header>
+
+    <header class="sub-header">
+        <div class="btns"> 
+            <p id="btn-Kart">🛒</p>
+            <span id="cart-icon"></span>
+        </div>
+        <div id="cart-container">
+            <ul id="cart-list"></ul>
+            <div id="cart-total"></div> <!-- Añadido para mostrar el total -->
+            <button id="checkout-button" class="btn-w">Comprar por WhatsApp</button>
+        </div>
+        
+    </header>
+
+    <main>
+        <section>
+            <div class="services" id="services-container">
+                <!-- Las tarjetas se generarán dinámicamente con JavaScript -->
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        &copy; 2025 - Todos los derechos reservados. Servicios de Streaming y Juegos.
+    </footer>
+
+    <script src="streaming.js"></script>
+</body>
+</html>
