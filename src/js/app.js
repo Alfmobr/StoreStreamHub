@@ -21,12 +21,12 @@ const services = [
 
     { id: 11, image: "../img/target.png", title: "Tarjetas de Regalo", description: "Adquiere cualquier gif card", price: "Precios variables", link: "https://wa.me/50589600977" },
 
-    { id: 12, image: "../img/ClashRoyale.png", title: "Clash Royal", description: "Compra tus paquetes y Pass Royal", price: "Precios variables", link: "https://wa.me/50589600977" }
+    { id: 12, image: "/img/ClashRoyale.png", title: "Clash Royal", description: "Compra tus paquetes y Pass Royal", price: "Precios variables", link: "https://wa.me/50589600977" }
 ];
 
 const cart = [];
 
-// Función para renderizar las tarjetas
+// Función para renderizar las tarjetasdo
 function renderCards(data) {
     const container = document.getElementById('services-container');
     container.innerHTML = '';
