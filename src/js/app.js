@@ -1,27 +1,27 @@
 const services = [
-    { id: 1, image: "../img/netflix.png", title: "Netflix", description: "Accede a miles de películas y series exclusivas.", price: "C$100/mes", link: "https://wa.me/50589600977" },
+    { id: 1, image: "../src/img/netflix.png", title: "Netflix", description: "Accede a miles de películas y series exclusivas.", price: "C$100/mes", link: "https://wa.me/50589600977" },
 
-    { id: 2, image: "../img/spotify.png", title: "Spotify", description: "Disfruta de música sin límites en cualquier momento.", price: "C$120/mes", link: "https://wa.me/50589600977" },
+    { id: 2, image: "../src/img/spotify.png", title: "Spotify", description: "Disfruta de música sin límites en cualquier momento.", price: "C$120/mes", link: "https://wa.me/50589600977" },
 
-    { id: 3, image: "../img/ymusic.png", title: "YouTube Music", description: "Escucha tus canciones favoritas y descubre nuevos artistas.", price: "C$100/mes", link: "https://wa.me/50589600977" },
+    { id: 3, image: "../src/img/ymusic.png", title: "YouTube Music", description: "Escucha tus canciones favoritas y descubre nuevos artistas.", price: "C$100/mes", link: "https://wa.me/50589600977" },
 
-    { id: 4, image: "../img/hbomax.jpg", title: "HBO Max", description: "Ve las series y películas más populares del momento.", price: "C$100/mes", link: "https://wa.me/50589600977" },
+    { id: 4, image: "../src/img/hbomax.jpg", title: "HBO Max", description: "Ve las series y películas más populares del momento.", price: "C$100/mes", link: "https://wa.me/50589600977" },
 
-    { id: 5, image: "../img/amazon.png", title: "Amazon Prime", description: "Entretenimiento para toda la familia en un solo clic.", price: "C$110/mes", link: "https://wa.me/50589600977" },
+    { id: 5, image: "../src/img/amazon.png", title: "Amazon Prime", description: "Entretenimiento para toda la familia en un solo clic.", price: "C$110/mes", link: "https://wa.me/50589600977" },
 
-    { id: 6, image: "../img/pcgta.png", title: "Compras Juegos", description: "Adquiere tus compras en cualquier juego de manera rápida y segura.", price: "Precios variables", link: "https://wa.me/50589600977" },
+    { id: 6, image: "../src/img/pcgta.png", title: "Compras Juegos", description: "Adquiere tus compras en cualquier juego de manera rápida y segura.", price: "Precios variables", link: "https://wa.me/50589600977" },
 
-    { id: 7, image: "../img/FF.png", title: "Free Fire", description: "No te quedes con las ganas de recargar diamantes.", price: "Precios variables", link: "https://wa.me/50589600977" },
+    { id: 7, image: "../src/img/FF.png", title: "Free Fire", description: "No te quedes con las ganas de recargar diamantes.", price: "Precios variables", link: "https://wa.me/50589600977" },
 
-    { id: 8, image: "../img/8ballp.png", title: "8 Ball Pool", description: "Adquiere tus diamantes y 8 ball pass rápido y seguro.", price: "$5.99", link: "https://wa.me/50589600977" },
+    { id: 8, image: "../src/img/8ballp.png", title: "8 Ball Pool", description: "Adquiere tus diamantes y 8 ball pass rápido y seguro.", price: "$5.99", link: "https://wa.me/50589600977" },
 
-    { id: 9, image: "../img/cod.png", title: "Call Of Duty", description: "Coin Point ", price: "Precios variables", link: "https://wa.me/50589600977" },
+    { id: 9, image: "../src/img/cod.png", title: "Call Of Duty", description: "Coin Point ", price: "Precios variables", link: "https://wa.me/50589600977" },
 
-    { id: 10, image: "../img/cruch.png", title: "Crunchyroll", description: "Los mejores animes en uno solo", price: "C$90", link: "https://wa.me/50589600977" },
+    { id: 10, image: "../src/img/cruch.png", title: "Crunchyroll", description: "Los mejores animes en uno solo", price: "C$90", link: "https://wa.me/50589600977" },
 
-    { id: 11, image: "../img/target.png", title: "Tarjetas de Regalo", description: "Adquiere cualquier gif card", price: "Precios variables", link: "https://wa.me/50589600977" },
+    { id: 11, image: "../src/img/target.png", title: "Tarjetas de Regalo", description: "Adquiere cualquier gif card", price: "Precios variables", link: "https://wa.me/50589600977" },
 
-    { id: 12, image: "/img/ClashRoyale.png", title: "Clash Royal", description: "Compra tus paquetes y Pass Royal", price: "Precios variables", link: "https://wa.me/50589600977" }
+    { id: 12, image: "../src/img/ClashRoyale.png", title: "Clash Royal", description: "Compra tus paquetes y Pass Royal", price: "Precios variables", link: "https://wa.me/50589600977" }
 ];
 
 const cart = [];
