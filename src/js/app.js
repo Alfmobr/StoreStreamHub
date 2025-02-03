@@ -1,29 +1,79 @@
 const services = [
-    { id: 1, image: "../src/img/netflix.png", title: "Netflix", description: "Accede a miles de películas y series exclusivas.", price: "C$100/mes", link: "https://wa.me/50589600977" },
+    // Streaming (originales)
+    {
+        id: 1, image: "../src/img/netflix.png", title: "Netflix",
+        description: "Accede a miles de películas y series exclusivas.",
+        price: "C$100/mes", link: "https://wa.me/50589600977"
+    },
 
-    { id: 2, image: "../src/img/spotify.png", title: "Spotify", description: "Disfruta de música sin límites en cualquier momento.", price: "C$120/mes", link: "https://wa.me/50589600977" },
+    {
+        id: 2, image: "../src/img/spotify.png", title: "Spotify",
+        description: "Disfruta de música sin límites en cualquier momento.",
+        price: "C$120/mes", link: "https://wa.me/50589600977"
+    },
 
-    { id: 3, image: "../src/img/ymusic.png", title: "YouTube Music", description: "Escucha tus canciones favoritas y descubre nuevos artistas.", price: "C$100/mes", link: "https://wa.me/50589600977" },
+    {
+        id: 3, image: "../src/img/ymusic.png", title: "YouTube Music",
+        description: "Escucha tus canciones favoritas y descubre nuevos artistas.",
+        price: "C$100/mes", link: "https://wa.me/50589600977"
+    },
 
-    { id: 4, image: "../src/img/hbomax.jpg", title: "HBO Max", description: "Ve las series y películas más populares del momento.", price: "C$100/mes", link: "https://wa.me/50589600977" },
+    {
+        id: 4, image: "../src/img/hbomax.jpg", title:
+            "HBO Max", description: "Ve las series y películas más populares del momento.",
+        price: "C$100/mes", link: "https://wa.me/50589600977"
+    },
 
-    { id: 5, image: "../src/img/amazon.png", title: "Amazon Prime", description: "Entretenimiento para toda la familia en un solo clic.", price: "C$110/mes", link: "https://wa.me/50589600977" },
+    {
+        id: 5, image: "../src/img/amazon.png", title: "Amazon Prime",
+        description: "Entretenimiento para toda la familia en un solo clic.",
+        price: "C$110/mes", link: "https://wa.me/50589600977"
+    },
 
-    { id: 6, image: "../src/img/pcgta.png", title: "Compras Juegos", description: "Adquiere tus compras en cualquier juego de manera rápida y segura.", price: "Precios variables", link: "https://wa.me/50589600977" },
+    // Servicios mejorados
+    {
+        id: 6, image: "../src/img/pcgta.png", title: "Compras Juegos",
+        description: "Compra skins, DLCs y contenido especial para cualquier juego con garantía y entrega inmediata.",
+        price: "Preguntar Precios", link: "https://wa.me/50589600977"
+    },
 
-    { id: 7, image: "../src/img/FF.png", title: "Free Fire", description: "No te quedes con las ganas de recargar diamantes.", price: "Precios variables", link: "https://wa.me/50589600977" },
+    {
+        id: 7, image: "../src/img/FF.png", title: "Free Fire",
+        description: "Recarga diamantes al instante y desbloquea personajes exclusivos, armas élite y más.",
+        price: "Preguntar Precios", link: "https://wa.me/50589600977"
+    },
 
-    { id: 8, image: "../src/img/8ballp.png", title: "8 Ball Pool", description: "Adquiere tus diamantes y 8 ball pass rápido y seguro.", price: "$5.99", link: "https://wa.me/50589600977" },
+    {
+        id: 8, image: "../src/img/8ballp.png", title: "8 Ball Pool",
+        description: "Paquetes premium de diamantes y acceso VIP a mesas exclusivas para competencias globales.",
+        price: "Preguntar Precios", link: "https://wa.me/50589600977"
+    },
 
-    { id: 9, image: "../src/img/cod.png", title: "Call Of Duty", description: "Coin Point ", price: "Precios variables", link: "https://wa.me/50589600977" },
+    {
+        id: 9, image: "../src/img/cod.png", title: "Call Of Duty",
+        description: "Desbloquea CP (COD Points), armas legendarias y packs de temporada para ventaja competitiva.",
+        price: "Preguntar Precios", link: "https://wa.me/50589600977"
+    },
 
-    { id: 10, image: "../src/img/cruch.png", title: "Crunchyroll", description: "Los mejores animes en uno solo", price: "C$90", link: "https://wa.me/50589600977" },
+    // Crunchyroll (mejorado)
+    {
+        id: 10, image: "../src/img/cruch.png", title: "Crunchyroll",
+        description: "Anime sin anuncios: estrenos simultáneos con Japón, mangas digitales y contenido premium.",
+        price: "C$90", link: "https://wa.me/50589600977"
+    },
 
-    { id: 11, image: "../src/img/target.png", title: "Tarjetas de Regalo", description: "Adquiere cualquier gif card", price: "Precios variables", link: "https://wa.me/50589600977" },
+    {
+        id: 11, image: "../src/img/target.png", title: "Tarjetas de Regalo",
+        description: "Tarjetas digitales para Steam, Google Play, iTunes y más. ¡Entrega en menos de 5 minutos!",
+        price: "Preguntar Precios", link: "https://wa.me/50589600977"
+    },
 
-    { id: 12, image: "../src/img/ClashRoyale.png", title: "Clash Royal", description: "Compra tus paquetes y Pass Royal", price: "Precios variables", link: "https://wa.me/50589600977" }
+    {
+        id: 12, image: "../src/img/ClashRoyale.png", title: "Clash Royale",
+        description: "Pass Royale, gemas y cofres épicos para acelerar tu progreso en la arena.",
+        price: "Preguntar Precios", link: "https://wa.me/50589600977"
+    }
 ];
-
 const cart = [];
 
 // Función para renderizar las tarjetasdo
@@ -80,7 +130,7 @@ function updateCart() {
     cartList.innerHTML = '';
 
     let total = 0;
-    
+
     cart.forEach(item => {
         const listItem = document.createElement('li');
         listItem.innerHTML = `
@@ -146,12 +196,12 @@ document.getElementById('btn-Kart').addEventListener('click', () => {
 
 // Evento del botón de checkout
 document.getElementById('checkout-button').addEventListener('click', function () {
-    const message = cart.map(item => `${item.title} - ${item.price} (x${item.quantity})`).join('\n');
+    const message = cart.map(item => `${item.title}  (x${item.quantity})`).join('\n');
     const total = cart.reduce((sum, item) => sum + (parsePrice(item.price) * item.quantity), 0);
     const encodedMessage = encodeURIComponent(
-        `Hola GameHUB, quiero comprar:\n${message}\nTotal: C$${total.toFixed(2)}`
-    );
-    window.open(`https://wa.me/50587914699?text=${encodedMessage}`, '_blank');
+        `¡Hola!, quiero comprar:\n\n --------Servicios--------\n${message}\n\n----------------\n Total: C$${total.toFixed(2)}`
+    ); 
+    window.open(`https://wa.me/50583753076?text=${encodedMessage}`, '_blank');
 });
 
 
