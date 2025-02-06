@@ -19,7 +19,7 @@ const services = [
     },
 
     {
-        id: 3, image: "../src/img/ymusic.png", title: "YouTube Music",
+        id: 3, image: "../src/img/ymusic.png", title: "YT Music",
         description: "Escucha tus canciones favoritas y descubre nuevos artistas.",
         price: "C$100/mes", link: "https://wa.me/50589600977",category:"Straming",
          isHot: false,
@@ -37,23 +37,24 @@ const services = [
     },
 
     {
-        id: 5, image: "../src/img/amazon.png", title: "Amazon Prime",
+        id: 5, image: "../src/img/amazon.png", title: "Prime Video",
         description: "Entretenimiento para toda la familia en un solo clic.",
         price: "C$105/mes", link: "https://wa.me/50589600977",category:"Straming",
          isHot: false,
           blackFriday: false,
              porcentaje: 10
+    },  
+    
+    {
+        id: 6, image: "../src/img/cruch.png", title: "Crunchyroll",
+        description: "Anime sin anuncios: estrenos simultáneos con Japón, mangas digitales y contenido premium.",
+        price: "C$85", link: "https://wa.me/50589600977",category:"Straming",
+         isHot: false,
+        blackFriday: true,
+        porcentaje: 15
     },
 
     // Servicios mejorados
-    {
-        id: 6, image: "../src/img/pcgta.png", title: "Compras Juegos",
-        description: "Compra skins, DLCs y contenido especial para cualquier juego con garantía y entrega inmediata.",
-        price: "Preguntar Precios", link: "https://wa.me/50589600977",category:"Juegos",
-         isHot: false,
-          blackFriday: false,
-             porcentaje: 10
-    },
 
     {
         id: 7, image: "../src/img/FF.png", title: "Free Fire",
@@ -82,15 +83,15 @@ const services = [
              porcentaje: 10
     },
 
-    // Crunchyroll (mejorado)
     {
-        id: 10, image: "../src/img/cruch.png", title: "Crunchyroll",
-        description: "Anime sin anuncios: estrenos simultáneos con Japón, mangas digitales y contenido premium.",
-        price: "C$85", link: "https://wa.me/50589600977",category:"Straming",
+        id: 10, image: "../src/img/pcgta.png", title: "Compras Juegos",
+        description: "Compra skins, DLCs y contenido especial para cualquier juego con garantía y entrega inmediata.",
+        price: "Preguntar Precios", link: "https://wa.me/50589600977",category:"Juegos",
          isHot: false,
-        blackFriday: true,
-        porcentaje: 15
+          blackFriday: false,
+             porcentaje: 10
     },
+ 
 
     {
         id: 11, image: "../src/img/target.png", title: "Tarjetas de Regalo",
@@ -111,7 +112,8 @@ const services = [
              porcentaje: 10
     }
 ];
-const cart = [];
+
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // Función para renderizar las tarjetasdo
 function renderCards(data) {
@@ -130,6 +132,8 @@ function renderCards(data) {
         if(service.blackFriday){
             oferta = `<span class="black-friday">-${service.porcentaje}%</span>`;
         }
+
+        
         const card = `
             <div class="card">
              ${hotLabel}
@@ -147,7 +151,9 @@ function renderCards(data) {
               </svg>
                 </button>
             </div>
+            
         `
+        
         container.innerHTML += card;
     });
 
@@ -159,6 +165,43 @@ function renderCards(data) {
     });
 }
 
+
+// Modificar el JavaScript
+document.querySelectorAll('.filter-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        const filter = this.getAttribute('data-filter');
+        applyFilters(filter);
+    });
+});
+
+function applyFilters(category) {
+    const searchTerm = document.getElementById('search').value.toLowerCase();
+    let filtered = services.filter(service => 
+        (service.title.toLowerCase().includes(searchTerm) || 
+         service.description.toLowerCase().includes(searchTerm)) &&
+        (category === 'all' || service.category === category)
+    );
+    renderCards(filtered);
+}
+
+document.getElementById('search').addEventListener('input', () => {
+    const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+    applyFilters(activeFilter);
+});
+
+
+function showToast(message) {
+    const toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.style.display = 'block';
+    setTimeout(() => {
+        toast.style.display = 'none';
+    }, 3000);
+}
+
+
 // Función para añadir al carrito
 function addToCart(serviceId) {
     const service = services.find(item => item.id === serviceId);
@@ -169,45 +212,61 @@ function addToCart(serviceId) {
     } else {
         cart.push({ ...service, quantity: 1 });
     }
-
+    showToast('✅ Producto añadido al carrito');
+    localStorage.setItem('cart', JSON.stringify(cart));
     updateCart();
 }
 
 // Función para actualizar el carrito
 function parsePrice(priceStr) {
-    if (priceStr === "Precios variables") return 0;
-    const match = priceStr.match(/(\d+\.?\d*)/);
-    return match ? parseFloat(match[1]) : 0;
+    if (priceStr === "Preguntar Precios") return 0;
+    const numericPart = priceStr.replace(/[^0-9.]/g, '');
+    return parseFloat(numericPart) || 0;
 }
+
 
 // Actualizar carrito
 function updateCart() {
     const cartList = document.getElementById('cart-list');
     const totalElement = document.getElementById('cart-total');
-    cartList.innerHTML = '';
+    cartList.innerHTML = ''; // Limpiar lista
 
     let total = 0;
 
-    cart.forEach(item => {
-        const listItem = document.createElement('li');
-        listItem.innerHTML = `
-         <img class="img-logo" src="${item.image}" alt="${item.title}">
-             ${item.title} (x${item.quantity})
-            <button class="remove-from-cart" data-id="${item.id}">Eliminar</button>
-        `;
-        cartList.appendChild(listItem);
-        total += parsePrice(item.price) * item.quantity;
-    });
+    if (cart.length === 0) {
+        // Mostrar mensaje cuando el carrito está vacío
+        const emptyMessage = document.createElement('span');
+        emptyMessage.classList.add('emptyMessage');
+        emptyMessage.textContent = "🛒 Tu carrito está vacío";
+        cartList.appendChild(emptyMessage);
+    } else {
+        // Mostrar items del carrito
+        cart.forEach(item => {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `
+                <img class="img-logo" src="${item.image}" alt="${item.title}">
+                ${item.title} (x${item.quantity})
+                <button class="remove-from-cart" data-id="${item.id}">Eliminar</button>
+            `;
+            cartList.appendChild(listItem);
+            total += parsePrice(item.price) * item.quantity;
+        });
+    }
 
-    totalElement.textContent = `Total: C$${total.toFixed(2)}`;
+    // Actualizar total y botón de checkout
+    totalElement.textContent = cart.length > 0 ? `Total: C$${total.toFixed(2)}` : '';
     document.getElementById('checkout-button').style.display = cart.length > 0 ? 'block' : 'none';
 
-    document.querySelectorAll('.remove-from-cart').forEach(button => {
-        button.addEventListener('click', function () {
-            const serviceId = parseInt(this.getAttribute('data-id'));
-            removeFromCart(serviceId);
+    // Agregar eventos de eliminación solo si hay items
+    if (cart.length > 0) {
+        document.querySelectorAll('.remove-from-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const serviceId = parseInt(this.getAttribute('data-id'));
+                removeFromCart(serviceId);
+            });
         });
-    });
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
     updateCartIcon();
 }
 
@@ -221,7 +280,8 @@ function removeFromCart(serviceId) {
             cart.splice(index, 1);
         }
     }
-
+    showToast('🗑️ Producto eliminado del carrito');
+    localStorage.setItem('cart', JSON.stringify(cart));
     updateCart();
 }
 
@@ -229,7 +289,7 @@ function removeFromCart(serviceId) {
 function updateCartIcon() {
     const cartIcon = document.getElementById('cart-icon');
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    cartIcon.textContent = `(${totalItems})`;
+    cartIcon.textContent = `${totalItems}`;
 }
 
 // Función para filtrar los servicios
@@ -272,5 +332,7 @@ document.getElementById('search').addEventListener('input', function () {
 // Renderizar todas las tarjetas al cargar la página
 window.onload = () => {
     renderCards(services);
+    updateCart();
     updateCartIcon();
+    applyFilters('all');
 };
