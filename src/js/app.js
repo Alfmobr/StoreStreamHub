@@ -84,17 +84,17 @@ const services = [
     },
 
     {
-        id: 10, image: "../src/img/pcgta.png", title: "Compras Juegos",
+        id: 10, image: "../src/img/vix.png", title: "Vix",
         description: "Compra skins, DLCs y contenido especial para cualquier juego con garantía y entrega inmediata.",
-        price: "Preguntar Precios", link: "https://wa.me/50589600977",category:"Juegos",
-         isHot: false,
+        price: "C$100/mes", link: "https://wa.me/50589600977",category:"Straming",
+         isHot: true,
           blackFriday: false,
              porcentaje: 10
     },
  
 
     {
-        id: 11, image: "../src/img/target.png", title: "Tarjetas de Regalo",
+        id: 11, image: "../src/img/coc.png", title: "Clash Of Clans",
         description: "Tarjetas digitales para Steam, Google Play, iTunes y más. ¡Entrega en menos de 5 minutos!",
         price: "Preguntar Precios", link: "https://wa.me/50589600977",category:"Juegos",
          isHot: false,
@@ -111,7 +111,36 @@ const services = [
           blackFriday: false,
              porcentaje: 10
     }
+
+    ,
+
+    {
+        id: 13, image: "../src/img/paramount.png", title: "Paramount",
+        description: "Pass Royale, gemas y cofres épicos para acelerar tu progreso en la arena.",
+        price: "100", link: "https://wa.me/50589600977",category:"Straming",
+         isHot: false,
+          blackFriday: false,
+             porcentaje: 10
+    }
 ];
+
+
+let lastScroll = 0; // Almacena la última posición del scroll
+
+window.addEventListener("scroll", () => {
+  const subHeader = document.querySelector(".sub-header");
+  const currentScroll = window.scrollY;
+
+  if (currentScroll > lastScroll) {
+    // Scroll hacia abajo: fija el sub-header
+    subHeader.style.transform = "translateY(0)";
+  } else {
+    // Scroll hacia arriba: muestra el sub-header
+    subHeader.style.transform = "translateY(0)";
+  }
+
+  lastScroll = currentScroll;
+});
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -124,13 +153,13 @@ function renderCards(data) {
         let hotLabel = '';
         if (service.isHot) {
             // Puedes personalizar el estilo y texto de la etiqueta
-            hotLabel = `<span class="hot-label">Más Vendido</span>`;
+            hotLabel = `<span class="hot-label">Top Ventas 🔥</span>`;
         }
 
         let oferta =""
 
         if(service.blackFriday){
-            oferta = `<span class="black-friday">-${service.porcentaje}%</span>`;
+            oferta = `<span class="black-friday">¡Ahorra ${service.porcentaje}%!</span>`;
         }
 
         
@@ -245,7 +274,7 @@ function updateCart() {
             const listItem = document.createElement('li');
             listItem.innerHTML = `
                 <img class="img-logo" src="${item.image}" alt="${item.title}">
-                ${item.title} (x${item.quantity})
+                ${item.title},  ${item.price} (x${item.quantity})
                 <button class="remove-from-cart" data-id="${item.id}">Eliminar</button>
             `;
             cartList.appendChild(listItem);
@@ -313,10 +342,10 @@ document.getElementById('btn-Kart').addEventListener('click', () => {
 
 // Evento del botón de checkout
 document.getElementById('checkout-button').addEventListener('click', function () {
-    const message = cart.map(item => `${item.title}  (x${item.quantity})`).join('\n');
+    const message = cart.map(item => ` ✓ ${item.title}   ${item.price}  (x${item.quantity})`).join('\n');
     const total = cart.reduce((sum, item) => sum + (parsePrice(item.price) * item.quantity), 0);
     const encodedMessage = encodeURIComponent(
-        `¡Hola!, quiero comprar:\n\n --------Servicios--------\n${message}\n\n----------------\n Total: C$${total.toFixed(2)}`
+        `¡Hola!  , quiero comprar:\n  \n  --------Servicios--------\n${message}\n\n----------------\n Total: C$${total.toFixed(2)}`
     );
     window.open(`https://wa.me/50587914699?text=${encodedMessage}`, '_blank');
 });

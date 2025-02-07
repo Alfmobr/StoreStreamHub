@@ -39,7 +39,12 @@ main{
     justify-content: space-around;
     border-bottom: 1px solid #9999993a;
     gap: 5px;
-
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    transition: transform 0.3s ease;
+    background-color: #e2e2e25a;
+    backdrop-filter: blur(2px);
 }
 
 /* Agregar al CSS */
@@ -165,17 +170,17 @@ main{
     position: absolute;
     top: 10px;
     left: 10px;
-    background-color: red;
+    background-color: #FF0000;
     color: white;
     padding: 5px 10px;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: bold;
     border-radius: 5px;
     z-index: 11;
 }
 
 .black-friday {
-    background-color: #e53935; /* Rojo intenso */
+    background-color: #28A745; /* Rojo intenso */
     color: #fff;              /* Texto blanco */
     font-weight: bold;
     padding: 4px 8px;
@@ -270,15 +275,17 @@ main{
         border-bottom: 1px solid #2f4062;
         overflow: scroll;
         scrollbar-width: none;
+        align-items: center;
 
 
         li{
+            width: 80%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 20px;
-            
-             box-shadow: 0px 5px 50px 5px rgba(89, 86, 86, 0.192);
+            gap: 20px;  
+            border-radius: 8px;
+           
         }
         
     }
