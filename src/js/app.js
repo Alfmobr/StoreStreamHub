@@ -85,7 +85,7 @@ const services = [
 
     {
         id: 10, image: "../src/img/vix.png", title: "Vix",
-        description: "Compra skins, DLCs y contenido especial para cualquier juego con garantía y entrega inmediata.",
+        description: "La mejor plataforma para disfrutar de tus telenovelas y cualquier deporte.",
         price: "C$100/mes", link: "https://wa.me/50589600977",category:"Straming",
          isHot: true,
           blackFriday: false,
@@ -95,7 +95,7 @@ const services = [
 
     {
         id: 11, image: "../src/img/coc.png", title: "Clash Of Clans",
-        description: "Tarjetas digitales para Steam, Google Play, iTunes y más. ¡Entrega en menos de 5 minutos!",
+        description: "Skins, Gemas Pack de eventos. ",
         price: "Preguntar Precios", link: "https://wa.me/50589600977",category:"Juegos",
          isHot: false,
           blackFriday: false,
@@ -116,8 +116,8 @@ const services = [
 
     {
         id: 13, image: "../src/img/paramount.png", title: "Paramount",
-        description: "Pass Royale, gemas y cofres épicos para acelerar tu progreso en la arena.",
-        price: "100", link: "https://wa.me/50589600977",category:"Straming",
+        description: "Disfruta de la gran variedad de contenido, series, pelicula mas populares.",
+        price: "C$100/mes", link: "https://wa.me/50589600977",category:"Straming",
          isHot: false,
           blackFriday: false,
              porcentaje: 10
